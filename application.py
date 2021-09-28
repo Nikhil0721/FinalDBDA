@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
-from tensorflow.python.keras.models import load_model
-from tensorflow.keras.preprocessing import image
+from keras.models import load_model
+from keras.preprocessing import image
 from flask import Flask,render_template,Response
 import os
 
