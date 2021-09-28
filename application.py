@@ -3,11 +3,11 @@ import cv2
 from keras.models import load_model
 from keras.preprocessing import image
 from flask import Flask,render_template,Response
-import os
+#import os
 
 application = Flask(__name__)
 model = load_model('face_mask.model')
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 
 face_cascade = \
     cv2.CascadeClassifier('haarcascades\haarcascade_frontalface_alt2.xml'
@@ -65,7 +65,8 @@ def generate_frames():
 
 @application.route('/')
 def index():
-    return render_template('FlaskApplication.html')
+    return "MSdhoni"
+    #return render_template('FlaskApplication.html')
 @application.route('/video')
 def video():
     return Response(generate_frames(),mimetype='multipart/x-mixed-replace; boundary=frame')
