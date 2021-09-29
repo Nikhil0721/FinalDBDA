@@ -37,5 +37,19 @@ pads{
      <p style="text-align:right; font-size:25px; padding-right:400px";>3.Maintain social distancing</p>
      <img src="{{ url_for('static',filename='imagecovid.png')}}"  width="700" height="450" align="right">
 </div>
+  <script>
+const constraints = {
+  video: true,
+};
+
+const video = document.querySelector("video");
+
+navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
+  video.srcObject = stream;
+});
+</script>
 </body>
 </html>
+
+
+
