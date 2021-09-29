@@ -6,7 +6,7 @@ from flask import Flask,render_template,Response
 #import os
 
 model = load_model('face_mask.model')
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(-1)
 
 face_cascade = \
     cv2.CascadeClassifier('haarcascades\haarcascade_frontalface_alt2.xml'
