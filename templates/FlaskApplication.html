@@ -38,15 +38,16 @@ pads{
      <img src="{{ url_for('static',filename='imagecovid.png')}}"  width="700" height="450" align="right">
 </div>
   <script>
-const constraints = {
-  video: true,
-};
+<video id="player" controls></video>
+<script>
+  var player = document.getElementById('player');
 
-const video = document.querySelector("video");
+  var handleSuccess = function(stream) {
+    player.srcObject = stream;
+  };
 
-navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
-  video.srcObject = stream;
-});
+  navigator.mediaDevices.getUserMedia({ audio: true, video: true })
+      .then(handleSuccess)
 </script>
 </body>
 </html>
